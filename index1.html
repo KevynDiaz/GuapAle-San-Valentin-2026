@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi vALEntine's de la vida 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuentes: mismas que el código original (sans-serif del sistema) -->
+  <style>
+    :root {
+      /* Colores principales: puedes cambiarlos a tu gusto */
+      --color-bg: #fff7f5;
+      --color-bg-alt: #ffe9e3;
+      --color-primary: #e76f51;
+      --color-primary-soft: #f4a261;
+      --color-accent: #2a9d8f;
+      --color-text: #3a3a3a;
+      --color-muted: #7a7a7a;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-full: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ffe9e3 0, #fff7f5 55%, #ffffff 100%);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    /* Encabezados generales */
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.03em;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      text-align: center;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+    /* Hero / Portada */
+    header.hero {
+      padding: 2.25rem 1.25rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .hero-inner {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.25rem 2rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: rgba(231, 111, 81, 0.1);
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-width: 180px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-soft));
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(231, 111, 81, 0.35);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(231, 111, 81, 0.45);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--color-primary);
+      border: 1px dashed rgba(231, 111, 81, 0.4);
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      background: rgba(231, 111, 81, 0.06);
+    }
+
+    /* Chips de resumen */
+    .story-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--color-muted);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.6rem;
+      top: 0.15rem;
+      bottom: 0.15rem;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-primary-soft), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.75rem;
+      padding-left: 0.75rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -0.13rem;
+      top: 0.45rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--color-primary-soft);
+      box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.15);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--color-primary);
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-media {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      max-height: 420px;
+    }
+
+    .timeline-media img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Galería */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+      background: #fdfdfd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item::after {
+      content: "Ver ♥";
+      position: absolute;
+      bottom: 5px;
+      right: 7px;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-full);
+      background: rgba(0, 0, 0, 0.45);
+      color: #ffffff;
+    }
+
+    .gallery-item:active img {
+      transform: scale(1.01);
+    }
+
+    /* Modal galería */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .modal-image-wrapper {
+      max-height: 78vh;
+      overflow: hidden;
+    }
+
+    .modal-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 0.4rem;
+      right: 0.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: var(--radius-full);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--color-text);
+    }
+
+    /* Videos */
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .video-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .video-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--color-primary);
+      font-size: 0.95rem;
+    }
+
+    .video-desc {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Carta */
+    .letter-card {
+      background: linear-gradient(135deg, rgba(255, 233, 227, 0.98), rgba(255, 247, 245, 0.98));
+      border-radius: 24px;
+      padding: 1.4rem 1.2rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-card::before {
+      content: "✉️";
+      position: absolute;
+      font-size: 3.2rem;
+      opacity: 0.08;
+      right: -10px;
+      top: -10px;
+      transform: rotate(-7deg);
+    }
+
+    .letter-heading {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-bottom: 0.4rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .letter-meta {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .letter-body {
+      font-size: 0.92rem;
+      color: var(--color-text);
+      text-align: left;
+      white-space: pre-line;
+      animation: fadeInLetter 1.3s ease both;
+    }
+
+    @keyframes fadeInLetter {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pregunta final */
+    .final-section {
+      margin-top: 2.5rem;
+      padding: 1.8rem 1.4rem 2.4rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(140deg, rgba(231, 111, 81, 0.1), rgba(255, 247, 245, 0.98));
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-section::before,
+    .final-section::after {
+      content: "♥";
+      position: absolute;
+      font-size: 3.2rem;
+      color: rgba(231, 111, 81, 0.07);
+    }
+
+    .final-section::before {
+      top: -10px;
+      left: 10px;
+    }
+
+    .final-section::after {
+      bottom: -20px;
+      right: 18px;
+    }
+
+    .final-question {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .final-caption {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .final-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-final {
+      min-width: 120px;
+    }
+
+    #btn-yes {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-primary-soft));
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(42, 157, 143, 0.3);
+    }
+
+    #btn-no {
+      background: #ffffff;
+      color: var(--color-primary);
+      border: 1px solid rgba(231, 111, 81, 0.5);
+      position: relative;
+    }
+
+    #btn-no:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.4);
+    }
+
+    /* Contenedor GIF de celebración */
+    .celebration {
+      margin-top: 1.4rem;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: popIn 0.55s ease-out;
+    }
+
+    .celebration img {
+      max-width: 240px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .celebration-text {
+      font-size: 1rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Confetti canvas */
+    #confetti-canvas {
+      position: fixed;
+      pointer-events: none;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+      display: none;
+    }
+
+    /* Utilidades */
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-sm {
+      margin-top: 0.75rem;
+    }
+
+    hr.section-divider {
+      border: none;
+      border-top: 1px dashed rgba(231, 111, 81, 0.3);
+      margin: 0.5rem 0 1.8rem;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      header.hero {
+        padding-top: 2.75rem;
+      }
+      .hero-inner {
+        padding: 2.2rem 2.25rem;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .section-title {
+        font-size: 2.1rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 900px) {
+      main {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+      }
+      .hero-inner {
+        padding-inline: 3rem;
+      }
+      .timeline {
+        max-width: 720px;
+        margin-inline: auto;
+      }
+      .video-list {
+        flex-direction: row;
+      }
+      .video-card {
+        flex: 1;
+      }
+      .final-section {
+        margin-inline: auto;
+        max-width: 640px;
+      }
+      .letter-card {
+        max-width: 700px;
+        margin-inline: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <main>
+    <header class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span>San Valentín 2026</span>
+          <span>·</span>
+          <span>Mi vALEntine's</span>
+        </div>
+
+        <p class="hero-meta">
+          Juntos desde hace 309 dias, de los cuales 175 días fueron a distancia y ahora, por fin, en el mismo lugar.
+        </p>
+
+        <h1 class="hero-title" id="hero-title">
+          ¿Quieres ser mi vALEntine's este 2026 mi guapALE hermosa?
+        </h1>
+
+        <p class="hero-subtitle">
+          Sobrevivimos a diferencias de horarios, videollamadas en pijama muy greñudos y eso hace que este momento aquí, contigo, sea todavía más especial.
+        </p>
+
+        <div class="story-chips" aria-label="Resumen de nuestra historia">
+          <span class="chip">309 dias juntos como novios</span>
+          <span class="chip">28 días en Montreal</span>
+          <span class="chip">147 días en Taiwán</span>
+          <span class="chip">175 días contando los minutos para abrazarte de nuevo</span>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="document.getElementById('historia').scrollIntoView({behavior:'smooth'})">
+            Nuestra historia
+          </button>
+          <button class="btn btn-ghost" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">
+            Ir directo a la pregunta ❤️
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section id="historia" aria-labelledby="historia-title">
+      <h2 class="section-title" id="historia-title">Nuestra línea de tiempo</h2>
+      <p class="section-subtitle">
+        Solo tú y yo sabemos lo que significó cada día lejos. Aquí va una pequeña versión de nuestra historia, contada en momentos.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">18 de Octubre del 2024, aquí empezó todo, te animaste y me enviaste un follow.</p>
+          <h3 class="timeline-title">El comienzo de nosotros</h3>
+          <p class="timeline-text">
+            Yo no sabia quien eras, pero tu ya me tenias bien investigado. Y aparte que vi tu foto y dije que mujer tan atractiva, senti que debia guardar este momento, una Diosidencia.
+          </p>
+          <div class="timeline-media">
+            <img src="img/libro.jpg" alt="Recuerdo del inicio de nuestra relación" />
+          </div>
+        </article>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">30 de Marzo del 2025, cuando todo se hizo oficial.</p>
+          <h3 class="timeline-title">El inicio de nuestro amor FeLiToFi</h3>
+          <p class="timeline-text">
+            Aqunque estaba muy nervioso, porfin despues de 6 meses, te dije que estas muy bonita 3 veces. Me dijeron que no no no, al coco no, pero luego que si. Ha sido el mejor dia de mi vida probar tus labios.
+          </p>
+          <div class="timeline-media">
+            <img src="img/novios.jpg" alt="Nos hicimos novios" />
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">28 junio 2025 – 26 julio 2025 · Montreal, Canadá</p>
+          <h3 class="timeline-title">28 días a miles de kilómetros</h3>
+          <p class="timeline-text">
+            Mi principesha muy francesa u bilingue se fue a Montreal, Canada. No podia sentirme mas orgulloso y ALEgre por ti, que hermosa con las llamadas diarias.
+          </p>
+          <div class="timeline-media">
+            <img src="img/canada.jpg" alt="Foto de ella en Montreal" />
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">1 septiembre 2025 – 26 enero 2026 · Taiwán</p>
+          <h3 class="timeline-title">147 días entre husos horarios</h3>
+          <p class="timeline-text">
+            No se diga lo preciosa que te ves, todos los dias... Pero en Taiwan demostraste que eres mas que la mujer mas hermosa del mundo, la mas inteligente tambien.
+          </p>
+          <div class="timeline-media">
+            <img src="img/tai.jpg" alt="Foto de ella en Taiwán" />
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">26 enero 2026, nuestro reencuentro</p>
+          <h3 class="timeline-title">El abrazo y la sonrisa que valió 175 días</h3>
+          <p class="timeline-text">
+            Me sentia emocionado al manejar a tu casa, estaba nervioso, ansiosos de veras jaj, pero ya queria abrazarte. Al abrir la puerta tenia muchas ganas de llorar pero solo me diste paz al estar junto a ti, que preciosa neta.
+          </p>
+          <div class="timeline-media">
+            <img src="img/regreso.jpeg" alt="Foto del reencuentro después de la distancia" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section id="galeria" aria-labelledby="galeria-title">
+      <h2 class="section-title" id="galeria-title">Momentos favoritos</h2>
+      <p class="section-subtitle">
+        Una pequeña galería de fotos para recordar que, incluso cuando la pantalla nos separaba, siempre estuvimos del mismo lado.
+      </p>
+
+      <div class="gallery-grid" aria-label="Galería de fotos de nosotros">
+        <figure class="gallery-item" data-full="img/foto1.jpg" aria-label="Foto 1 de nosotros">
+          <img src="img/foto1.jpg" alt="Foto 1 de nosotros" />
+        </figure>
+
+        <figure class="gallery-item" data-full="img/foto2.jpg" aria-label="Foto 2 de nosotros">
+          <img src="img/foto2.jpg" alt="Foto 2 de nosotros" />
+        </figure>
+
+        <figure class="gallery-item" data-full="img/foto3.jpg" aria-label="Foto 3 de nosotros">
+          <img src="img/foto3.jpg" alt="Foto 3 de nosotros" />
+        </figure>
+
+        <figure class="gallery-item" data-full="img/foto4.jpg" aria-label="Foto 4 de nosotros">
+          <img src="img/foto4.jpg" alt="Foto 4 de nosotros" />
+        </figure>
+
+        <figure class="gallery-item" data-full="img/foto5.jpg" aria-label="Foto 5 de nosotros">
+          <img src="img/foto5.jpg" alt="Foto 5 de nosotros" />
+        </figure>
+
+        <figure class="gallery-item" data-full="img/foto6.jpeg" aria-label="Foto 6 de nosotros">
+          <img src="img/foto6.jpeg" alt="Foto 6 de nosotros" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="gallery-modal" aria-modal="true" role="dialog" aria-label="Imagen ampliada de la galería">
+      <div class="modal-content">
+        <button class="modal-close" type="button" aria-label="Cerrar imagen" id="modal-close-btn">&times;</button>
+        <div class="modal-image-wrapper">
+          <img src="" alt="Foto ampliada" id="modal-image" />
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <section id="videos" aria-labelledby="videos-title">
+      <h2 class="section-title" id="videos-title">Pequeños videos, grandes recuerdos</h2>
+      <p class="section-subtitle">
+        Algunos de nuestros videos de nosotros que me encantan, como TE AMOOO preciosura de mi corazon.
+      </p>
+
+      <div class="video-list">
+        <article class="video-card">
+          <h3 class="video-title">Video 1: Antes de irte a Taiwan</h3>
+          <p class="video-desc">
+            Me encanta recordar ese momento, estaba muy contento y a la vez triste porque ya te empezaba a extrañar. Aparte de coqueta, bien fashion con su outfit muy mona.
+          </p>
+          <div class="video-wrapper">
+           <iframe
+            src="https://www.youtube-nocookie.com/embed/lXSX2iq_dKQ?si=rbz8uWRS341-_bjP"
+            title="Video de nosotros 1"
+            frameborder="0"
+            referrerpolicy="strict-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <h3 class="video-title">Video 2: Recien vacunada</h3>
+          <p class="video-desc">
+            Doña CachondAle en su maximo esplendor, me encantaaa. No cabe duda que eres mi persona favorita, quiero pasar el resto de mi vida junto a ti.
+          </p>
+          <div class="video-wrapper">
+            <iframe
+            src="https://www.youtube-nocookie.com/embed/zMa_-xrXB6c?si=zYjmtJm6-y2j7jJ9"
+            title="Video de nosotros 2"
+            frameborder="0"
+            referrerpolicy="strict-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <h3 class="video-title">Video 3: Siempre te eligire</h3>
+          <p class="video-desc">
+            Un poquito de nostros, como me encantas y te amoooo de verdad mi guapAle
+          </p>
+          <div class="video-wrapper">
+            <iframe
+            src="https://www.youtube-nocookie.com/embed/t-Jg5mlAylI?si=uO204Sr3-tUczi5N"
+            title="Video de nosotros 3"
+            frameborder="0"
+            referrerpolicy="strict-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section id="carta" aria-labelledby="carta-title">
+      <h2 class="section-title" id="carta-title">Una carta para ti</h2>
+      <p class="section-subtitle">
+        Un pedacito de todo lo que quiero decirte, pero que a veces me gana la emoción cuando te miro a los ojos.
+      </p>
+
+      <article class="letter-card">
+        <h3 class="letter-heading">Para: GuapAle, el amor de mi vida y futura esposa</h3>
+        <p class="letter-meta">De: Kevyn, tu futuro esposo · San Valentín 2026</p>
+        <p class="letter-body">
+          GuapAle,
+
+Dios sabe cuántas veces le he dado gracias por haberte puesto en mi camino. Desde que llegaste, mi vida se siente más ligera, más bonita y más llena de sentido. A tu lado entendí que el amor de verdad no es solo mariposas, sino elegirnos cada día, incluso cuando la distancia y el cansancio parecían más grandes que nosotros.
+
+Cuando te fuiste a Canada y luego a Taiwán, me dolió el corazón de extrañarte, pero también sentí algo muy profundo: aunque estuvieras lejos, nunca dejaste de estar conmigo. En cada llamada, en cada mensaje, en cada “ya tengo sueño” y nomas era puro jiji jaja, confirmaba que lo nuestro vale la pena. Aprendí a ofrecer esos días a Dios, pidiéndole que cuidara de ti, que te sostuviera cuando yo no podía abrazarte, y que nos mantuviera unidos a pesar de los horarios tan diferentes y las pantallas.
+
+Hoy, después de 175 días contando los minutos para volver a verte, solo puedo mirarte y pensar: “Señor, gracias por esta mujer, gracias por su corazón, gracias por dejarme amarla asi FeLIToFi”. Quiero caminar contigo de la mano, seguir creciendo juntos en fe y en amor, y construir un futuro donde Tú y yo estemos siempre en el mismo equipo: tú, yo y Dios en medio.
+
+Por eso, desde lo más cursi y sincero de mi corazón, con toda la emoción del mundo y con la esperanza de que este sea el segundo de muchos San Valentines juntos, te quiero preguntar algo muy importante nalgonAle:
+
+¿Me regalas el honor de ser esa persona que camina contigo, que te cuida y te elige todos los días?
+¿Me dejas seguir soñando contigo como mi “para siempre”, como mi compañera, mi mejor amiga, mi GuapAle y, algún día, mi esposa?
+
+Con todo el amor que tengo y todo el que todavía me falta por aprender a darte,
+te pregunto desde lo más profundo de mi corazón:
+
+¿Quieres ser mi San Valentín este 2026… y todos los que vengan después mi ReinAle?
+
+Siempre tuyo, quien mas te ama y te admira,
+-Kevyn
+        </p>
+      </article>
+    </section>
+
+    <section id="final" class="final-section" aria-labelledby="final-title">
+      <h2 class="final-question" id="final-title">Entonces…</h2>
+      <p class="final-caption">
+        Después de todo lo que hemos vivido, de cada kilómetro y cada llamada, solo me queda hacerte una pregunta importante:
+      </p>
+
+      <p class="final-question">¿Te gustaría ser mi vALEntine's este 2026?</p>
+
+      <div class="final-buttons" aria-label="Opciones de respuesta">
+        <button id="btn-yes" class="btn btn-final" type="button">
+          Sí, obvio 💘
+        </button>
+        <button id="btn-no" class="btn btn-final" type="button">
+          No 🙃
+        </button>
+      </div>
+
+      <div class="celebration" id="celebration">
+        <img src="img/celebration.gif" alt="GIF celebrando que dijo que sí" id="celebration-gif" />
+        <p class="celebration-text">Sabía que ibas a decir que sí. 💕</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const modal = document.getElementById("gallery-modal");
+      const modalImage = document.getElementById("modal-image");
+      const closeBtn = document.getElementById("modal-close-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const fullSrc = item.getAttribute("data-full");
+          modalImage.src = fullSrc;
+          modal.classList.add("active");
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        modalImage.src = "";
+      };
+
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    })();
+
+    (function () {
+      const btnYes = document.getElementById("btn-yes");
+      const btnNo = document.getElementById("btn-no");
+      const celebration = document.getElementById("celebration");
+      const confettiCanvas = document.getElementById("confetti-canvas");
+      const ctx = confettiCanvas.getContext("2d");
+
+      function resizeCanvas() {
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      let moveCount = 0;
+      const maxMoveCount = 15;
+
+      function moveNoButton() {
+        const rect = btnNo.getBoundingClientRect();
+        const offsetX = (Math.random() - 0.5) * 220;
+        const offsetY = (Math.random() - 0.5) * 140;
+
+        let newLeft = rect.left + offsetX;
+        let newTop = rect.top + offsetY;
+
+        const padding = 40;
+        const maxLeft = window.innerWidth - rect.width - padding;
+        const maxTop = window.innerHeight - rect.height - padding;
+
+        newLeft = Math.min(Math.max(padding, newLeft), maxLeft);
+        newTop = Math.min(Math.max(padding, newTop), maxTop);
+
+        btnNo.style.position = "fixed";
+        btnNo.style.left = newLeft + "px";
+        btnNo.style.top = newTop + "px";
+
+        moveCount++;
+      }
+
+      btnNo.addEventListener("mouseenter", () => {
+        moveNoButton();
+      });
+
+      btnNo.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        moveNoButton();
+      }, { passive: false });
+
+      btnNo.addEventListener("click", (event) => {
+        event.preventDefault();
+        moveNoButton();
+      });
+
+      const CONFETTI_COLORS = ["#e76f51", "#f4a261", "#2a9d8f", "#e9c46a", "#ffffff"];
+      const CONFETTI_COUNT = 220;
+      const GRAVITY = 0.18;
+      const TERMINAL_VELOCITY = 4.5;
+      const DRAG = 0.02;
+
+      let confettiPieces = [];
+      let isConfettiRunning = false;
+
+      function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function initConfetti() {
+        confettiPieces = [];
+        for (let i = 0; i < CONFETTI_COUNT; i++) {
+          confettiPieces.push({
+            color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+            dimensions: {
+              x: randomRange(5, 9),
+              y: randomRange(8, 14)
+            },
+            position: {
+              x: randomRange(0, confettiCanvas.width),
+              y: confettiCanvas.height - 1
+            },
+            rotation: randomRange(0, 2 * Math.PI),
+            scale: {
+              x: 1,
+              y: 1
+            },
+            velocity: {
+              x: randomRange(-5, 5),
+              y: randomRange(-8, -12)
+            }
+          });
+        }
+      }
+
+      function renderConfetti() {
+        ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+        confettiPieces.forEach((confetto, index) => {
+          confetto.velocity.x -= confetto.velocity.x * DRAG;
+          confetto.velocity.y = Math.min(confetto.velocity.y + GRAVITY, TERMINAL_VELOCITY);
+          confetto.position.x += confetto.velocity.x;
+          confetto.position.y += confetto.velocity.y;
+
+          if (confetto.position.y >= confettiCanvas.height) {
+            confettiPieces.splice(index, 1);
+          }
+
+          if (confetto.position.x < -50 || confetto.position.x > confettiCanvas.width + 50) {
+            confettiPieces.splice(index, 1);
+          }
+        });
+
+        confettiPieces.forEach((confetto) => {
+          ctx.save();
+          ctx.translate(confetto.position.x, confetto.position.y);
+          ctx.rotate(confetto.rotation);
+
+          confetto.scale.y = Math.cos(confetto.position.y * 0.1);
+          ctx.scale(confetto.scale.x, confetto.scale.y);
+
+          ctx.fillStyle = confetto.color;
+          ctx.fillRect(-confetto.dimensions.x / 2, -confetto.dimensions.y / 2, confetto.dimensions.x, confetto.dimensions.y);
+          ctx.restore();
+        });
+
+        if (confettiPieces.length > 0) {
+          requestAnimationFrame(renderConfetti);
+        } else {
+          isConfettiRunning = false;
+          confettiCanvas.style.display = "none";
+        }
+      }
+
+      function startConfetti() {
+        if (isConfettiRunning) return;
+        confettiCanvas.style.display = "block";
+        initConfetti();
+        isConfettiRunning = true;
+        renderConfetti();
+      }
+
+      btnYes.addEventListener("click", () => {
+        startConfetti();
+        celebration.style.display = "flex";
+        celebration.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    })();
+  </script>
+</body>
+</html>
+
